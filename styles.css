@@ -1,0 +1,327 @@
+:root {
+  --green: #1db954;
+  --border-green: #15853c;
+  --gray: rgb(179, 179, 179);
+  --border-gray: rgb(136, 136, 136);
+  --black: rgb(29, 29, 29);
+}
+body {
+  background-color: rgb(29, 29, 29);
+  margin: 0;
+  padding: 0;
+}
+#controls {
+  width: 350px;
+  min-height: 80px;
+  color: white;
+  font-weight: 800;
+}
+.musicplayer__container {
+  position: fixed;
+  top: 0; /* colado no topo */
+  left: 50%; /* centraliza horizontalmente */
+  transform: translateX(-50%); /* ajusta para ficar exatamente no meio */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%; /* ocupa largura total, se quiser */
+  padding: 5px;
+  background: #111; /* opcional, para contraste */
+  z-index: 10; /* garante que fique acima de outros elementos */
+  border-bottom: 5px solid var(--border-green);
+  padding-bottom: 10px;
+}
+
+.musicplayer__album__cover {
+  width: 60px;
+  height: 60px;
+}
+.cover {
+  border: 2px solid var(--green);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.mini__cover {
+  width: 50px;
+  height: 50px;
+}
+.mini__container {
+  width: 50px;
+  height: 50px;
+}
+.musicplayer__album__cover__container {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+.musicplayer__album__cover img {
+  width: 60px;
+}
+.musicplayer__music__name {
+  width: 190px;
+  height: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 13px;
+  padding-left: 5px;
+}
+
+.musicplayer__buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+.musicplayer__buttons button {
+  border: 0;
+  border-radius: 5px;
+  background-color: var(--gray);
+  text-align: center;
+  height: 25px;
+  width: 42px;
+}
+.musicplayer__buttons__minors {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 70px;
+}
+.musicplayer__buttons__minors button {
+  width: 20px;
+  height: 20px;
+  font-size: 8px;
+  border-radius: 15px;
+  border: 0;
+  background-color: var(--gray);
+}
+
+.musicplayer__album__cover {
+  display: block; /* estado padrão visível */
+}
+.musicplayer__search {
+  height: 350px;
+}
+.musicplayer__searchbar__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: var(--green);
+  border-bottom: 5px solid var(--border-green);
+}
+.searchbar {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.searchbar button,
+.searchbar input {
+  margin: 0;
+}
+.searchbar input {
+  border: 0;
+  background-color: rgb(209, 209, 209);
+  border-radius: 5px 0 0 5px;
+  height: 30px;
+  color: var(--black);
+  padding-left: 5px;
+  margin-top: 5px;
+  padding-right: 10px;
+}
+.searchbar button {
+  border: 2px solid var(--border-gray);
+  background-color: var(--gray);
+  border-radius: 25px;
+  height: 40px;
+  width: 40px;
+  color: white;
+  margin-left: -10px;
+}
+.searchbar button:hover {
+  background-color: var(--border-green);
+  transform: scale(1.3);
+}
+.hide {
+  display: none;
+}
+
+.search__types label {
+  display: inline-block;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.search__types input {
+  display: none; /* esconde o checkbox */
+}
+
+.search__types span {
+  padding: 8px 12px;
+  border: 1px solid var(--border-gray);
+  background-color: rgb(29, 29, 29);
+  color: white;
+  border-radius: 6px;
+  display: inline-block; /* necessário para o transform funcionar corretamente */
+  transition: transform 0.2s ease, background-color 0.2s ease; /* animação suave */
+}
+.search__types span:hover {
+  background-color: var(--border-green);
+  transform: scale(1.2);
+}
+
+.search__types input:checked + span {
+  background-color: var(--border-green);
+  color: white;
+  border: 2px solid #ececec;
+}
+.search__types label {
+  user-select: none; /* desabilita seleção de texto */
+  -webkit-user-select: none; /* compatibilidade com Chrome/Safari */
+  -moz-user-select: none; /* compatibilidade com Firefox */
+  -ms-user-select: none; /* compatibilidade com IE/Edge */
+}
+.searchbar__container {
+  max-height: 350px;
+}
+.searchbar__container__content {
+  max-width: 350px;
+  max-height: 350px;
+  overflow: auto;
+}
+.searchbar__container__content > div:not(:first-child) {
+  border-top: 1px solid var(--border-gray);
+}
+.search-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 5px;
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+}
+.item__name {
+  width: 155px !important;
+  max-height: 17px;
+  overflow: hidden;
+}
+
+.item__artist {
+  width: 65px !important;
+  max-height: 17px;
+  overflow: hidden;
+}
+.scroll-text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  max-width: 200px; /* largura visível */
+}
+.search-item button {
+  width: 20px;
+  height: 20px;
+  border-radius: 15px;
+  border: 1px solid #ececec;
+  background-color: var(--black);
+  color: white;
+  display: inline-block; /* necessário para o transform funcionar corretamente */
+  transition: transform 0.2s ease, background-color 0.2s ease; /* animação suave */
+  font-size: 8px;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.search-item button:hover {
+  background-color: var(--border-green);
+  transform: scale(1.2);
+}
+.scroll-text span {
+  display: inline-block;
+  animation: scroll 10s linear infinite;
+}
+
+.search-item {
+  border-bottom: 2px solid var(--border-gray);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+/* Largura da barra */
+::-webkit-scrollbar {
+  width: 8px; /* para vertical */
+  height: 8px; /* para horizontal */
+}
+
+/* Cor de fundo da área da barra */
+::-webkit-scrollbar-track {
+  background: var(--black);
+}
+
+/* Cor e formato do "pino" da barra */
+::-webkit-scrollbar-thumb {
+  background-color: var(--green); /* verde Spotify */
+  border-radius: 10px;
+  border-top: 2px solid var(--black); /* espaço entre pino e borda */
+  border-bottom: 2px solid var(--black); /* espaço entre pino e borda */
+}
+
+/* Cor do "pino" quando o mouse está sobre */
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--border-green);
+}
+::-webkit-scrollbar-track:hover {
+  background-color: #c7c7c71c;
+}
+
+#not-logged {
+  width: 350px;
+  min-height: 150px;
+  display: flex;
+  color: white;
+
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-evenly;
+}
+#not-logged p {
+  border: 2px solid var(--gray);
+  width: 250px;
+  height: 40px;
+  font-size: 15px;
+  display: flex; /* flexbox para centralizar */
+  align-items: center; /* centraliza vertical */
+  justify-content: center; /* centraliza horizontal */
+
+  margin: 0; /* remove margem padrão do <p> */
+  padding: 10px; /* padding não é necessário para centralizar */
+}
+#not-logged button {
+  width: 90px;
+  font-size: 20px;
+  color: white;
+  font-weight: 800;
+  border-radius: 25px;
+  background-color: var(--green);
+  border: 2px solid var(--border-gray);
+  padding: 10px;
+}
+
+.musicplayer__playlist {
+  max-height: 350px;
+  width: 350px;
+  background-color: var(--black);
+  padding-top: 10px;
+}

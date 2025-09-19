@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Spotify Player</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="not-logged">
+      <p>Você não está logado no Spotify.</p>
+      <button id="login-btn">Login</button>
+    </div>
+    <div class="musicplayer__controls">
+      <div id="controls" style="display: none">
+        <div class="musicplayer__container">
+          <div class="musicplayer__album__cover__container">
+            <div class="musicplayer__album__cover cover hide"></div>
+          </div>
+          <div class="musicplayer__controls">
+            <div class="musicplayer__music__name"></div>
+            <div class="musicplayer__buttons">
+              <button id="prev">◄◄</button>
+              <button id="play">▶</button>
+              <button id="pause">❚❚</button>
+              <button id="next">►►</button>
+            </div>
+          </div>
+          <div class="musicplayer__buttons__minors">
+            <button id="search">🔍︎</button>
+            <button id="list">📘</button>
+            <button id="cover">📘</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="musicplayer__search hide">
+      <div class="musicplayer__searchbar__container">
+        <div class="searchbar">
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="Musica, playlist ou Podcast"
+          />
+          <button id="searchBtn">▶</button>
+        </div>
+        <div class="search__types">
+          <label>
+            <input type="checkbox" class="search-type" value="track" checked />
+            <span>Música</span>
+          </label>
+          <label>
+            <input type="checkbox" class="search-type" value="playlist" />
+            <span>Playlist</span>
+          </label>
+          <label>
+            <input type="checkbox" class="search-type" value="show" />
+            <span>Podcast</span>
+          </label>
+        </div>
+      </div>
+      <div class="searchbar__container">
+        <div class="searchbar__container__content"></div>
+      </div>
+    </div>
+    <div class="musicplayer__playlist hide">
+      <div class="musicplayer__album__cover__content"></div>
+    </div>
+    <script src="spotifyControles.js"></script>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

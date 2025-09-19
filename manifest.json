@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Spotify Custom Player",
+  "version": "1.0",
+  "permissions": ["storage", "tabs", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "icons/icon128.png"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["callback.html", "spotifyControles.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
